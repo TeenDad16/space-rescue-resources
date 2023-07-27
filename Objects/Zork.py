@@ -25,3 +25,9 @@ class Zork(RoomObject):
         """
         if self.y < 0 or self.y > Globals.SCREEN_HEIGHT - self.height:
             self.y_speed *= -1
+            
+    def step(self):
+        """
+        Determine what happens to the Dragon on each tick of the game clock
+        """
+        self.keep_in_room()

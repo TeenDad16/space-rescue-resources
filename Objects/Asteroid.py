@@ -66,4 +66,4 @@ class Asteroid(RoomObject):
         """
         
         if other_type == "Laser":
-            self.room.running = True
+            self.room.running = False

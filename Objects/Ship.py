@@ -32,7 +32,7 @@ class Ship(RoomObject):
         elif key[pygame.K_a]:
             self.x = -10
         elif key[pygame.K_d]:
-            self.x = 10
+            self.x = +10
             if key[pygame.K_SPACE]:
              self.shoot_laser()
             

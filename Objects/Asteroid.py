@@ -23,6 +23,8 @@ class Asteroid(RoomObject):
 
         # register events
         self.register_collision_object("Ship")
+        self.register_collision_object("Laser")
+        
         
     def step(self):
         """
@@ -56,4 +58,12 @@ class Asteroid(RoomObject):
         """
         
         if other_type == "Ship":
+            self.room.running = False
+
+    def handle_collision(self, other, other_type):
+        """
+        Handles the collision events for the Laser
+        """
+        
+        if other_type == "Laser":
             self.room.running = False

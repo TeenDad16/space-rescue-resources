@@ -49,8 +49,8 @@ class Ship(RoomObject):
             self.y = Globals.SCREEN_HEIGHT - self.height
         if self.x < 0:
             self.x = 0
-        elif self.x + self.height> Globals.SCREEN_HEIGHT:
-            self.x = Globals.SCREEN_HEIGHT - self.height
+        elif self.x + self.width> Globals.SCREEN_WIDTH:
+            self.x = Globals.SCREEN_WIDTH - self.width
             
     def step(self):
         """

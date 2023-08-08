@@ -37,7 +37,6 @@ class Ship(RoomObject):
             self.x_speed = 10
         if key[pygame.K_SPACE]:
 
-        
             self.shoot_laser()
             
     def keep_in_room(self):

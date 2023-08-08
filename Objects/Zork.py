@@ -1,4 +1,5 @@
 from GameFrame import RoomObject, Globals
+from Objects import Astronaut
 from Objects.Asteroid import Asteroid
 import random
 

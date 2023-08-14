@@ -20,11 +20,9 @@ class Asteroid(RoomObject):
         # set travel direction
         angle = random.randint(135,225)
         self.set_direction(angle, 10)
-
+        
         # register events
         self.register_collision_object("Ship")
-        self.register_collision_object("Laser")
-        
         
     def step(self):
         """
@@ -51,14 +49,16 @@ class Asteroid(RoomObject):
         if self.x + self.width < 0:
             print("asteroid deleted")
             self.room.delete_object(self)
-
+            
     def handle_collision(self, other, other_type):
         """
         Handles the collision events for the Asteroid
         """
         
         if other_type == "Ship":
-            self.room.running = False
-        elif other_type == "Laser":
-            self.delete_object(self)
-        
+            self.room.delete_object(self)
+            Globals.LIVES -= 1
+            if Globals.LIVES > 0:
+                self.room.lives.update_image()
+            else:
+                self.room.running = False
